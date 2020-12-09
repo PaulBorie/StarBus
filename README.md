@@ -9,12 +9,37 @@ L'application a besoin d'un connection internet pour fonctionner car elle utilis
 ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
 La fenêtre principale indique les prochains passages en minutes des bus à un arrêt de bus du réseau Star. elle dispose de 3 boutons, une flèche en bas à droite permettant de passer à l'arrêt suivant,
-une croix au milieu permettant de supprimer cet arrêt de bus des arrêts affichés par cette application et un bouton soleil en bas à gauche permattant de passer à la deuxième fenêtre
-affichant la météo à Rennes.
+une croix au milieu permettant de supprimer cet arrêt de bus des arrêts affichés par cette application et un bouton soleil en bas à gauche permattant de passer à la deuxième fenêtre affichant la météo à Rennes.
+
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
 
 ## ajouter des arrêts à afficher
 
-Pour l'instant 
+L'application fait tourner un serveur en background écoutant les requêtes clientes sur le port 9999 sur le réseau local.
+Les requêtes envoyées permettent de :
+* ajouter des arrêts avec des requêtes de la forme `ADD/nom_arret/numero_ligne/direction`
+* Supprimer des arrêts avec des requêtes de la forme  `REMOVE/nom_arret/numero_ligne/direction`
+* Changer la ville dont on affiche la météo `SETCITY/city`
+
+Une application mobile cliente est en cours de developpement implémentant ces requêtes derrière une interface graphique simple pour l'utilisateur lambda
+
+On peut tout de même déjà tester l'application à l'aide de petits clients réseau pré-installés sur beaucoup de distributions : `netcat` ou `telnet` 
+Exemple si l'application tourne sur une machine dont l'ip privée est `192.168.1.22`
+Alors sur une machine du même réseau on peut envoyer des requêtes à l'application à l'aide de `netcat` :
+
+```bash
+echo "ADD/Dargent/9/Cleunay" | netcat 192.168.1.22 9999
+```
+
+```bash
+echo "REMOVE/Dargent/9/Cleunay" | netcat 192.168.1.22 9999
+``` 
+
+```bash
+echo "SETCITY/Nantes" | netcat 192.168.1.22 9999
+``` 
+Une application mobile est en cours de developpement permettant d'effectuer ces reqêute au travers d'une interface graphique...
 
 ## Requirements
 
