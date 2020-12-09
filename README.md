@@ -1,4 +1,4 @@
-# StarBus 
+# StarBus, applciation Java FX
 
 StarBus est une application JAVA FX qui lance une interface graphique minimale indiquant les prochains passages de bus en temps réels aux arrêts de bus du réseau Star de Rennes.
 Elle a été designée pour tourner sur Raspberry Pi 3 et + équipés d'écrans tactiles 5 ou 7 pouces (voir section installation) mais peut-être installée sur PC.
@@ -14,17 +14,17 @@ une croix en bas au milieu permettant de supprimer l'arrêt de bus courrament af
 ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
 
-## ajouter des arrêts à afficher
+## Ajouter des arrêts à afficher
 
 L'application fait tourner un serveur en background écoutant les requêtes clientes sur le port 9999 sur le réseau local.
-Les requêtes envoyées permettent de :
-* ajouter des arrêts avec des requêtes de la forme `ADD/nom_arret/numero_ligne/direction`
-* Supprimer des arrêts avec des requêtes de la forme  `REMOVE/nom_arret/numero_ligne/direction`
-* Changer la ville dont on affiche la météo `SETCITY/city`
+Les requêtes envoyées permettent :
+* D'ajouter des arrêts avec des requêtes de la forme `ADD/nom_arret/numero_ligne/direction`
+* De supprimer des arrêts avec des requêtes de la forme  `REMOVE/nom_arret/numero_ligne/direction`
+* De Changer la ville dont on affiche la météo `SETCITY/city`
 
 Une application mobile cliente est en cours de developpement implémentant ces requêtes au travers une interface graphique simple pour l'utilisateur qui sera alors agnostique de ces requêtes. L'utilisateur aura juste à télécharger l'application, connecter son téléphone sur le même réseau wifi que son RaspBerry, à synchroniser le téléphone et le RaspBerry à l'aide d'un bouton sync et de sélectionner les arrêts de bus à ajouter/supprimer à l'aide de l'interface graphique.
 
-On peut tout de même déjà tester l'application à l'aide de petits clients réseau pré-installés sur beaucoup de distributions : `netcat` ou `telnet` cependant les numéros de ligne, noms des arrêts doivent suivre rigoureusement la syntaxe de l'API Star : 
+On peut tout de même déjà tester l'application à l'aide de petits clients réseau pré-installés sur beaucoup de distributions : `netcat` ou `telnet` cependant les numéros de ligne, noms des arrêts dans les commandes envoyées doivent respecter rigoureusement la syntaxe fournie par l'API Star indiquée dans le lien suivant :  
 Exemple si l'application tourne sur une machine dont l'ip privée est `192.168.1.22`
 Alors sur une machine du même réseau on peut envoyer des requêtes à l'application à l'aide de `netcat` : (on peut aussi tester sur la même machine sur laquelle tourne l'application en remplaçant `192.168.1.22` par `localhost` dans les commandes suivantes)
 
