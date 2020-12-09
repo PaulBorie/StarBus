@@ -1,6 +1,6 @@
 # StarBus 
 
-StarBus est une interface graphique minimale indiquant les prochains passages de bus en temps réels aux arrêts de bus du réseau Star de Rennes.
+StarBus est une application JAVA FX qui lance une interface graphique minimale indiquant les prochains passages de bus en temps réels aux arrêts de bus du réseau Star de Rennes.
 Elle a été designée pour tourner sur Raspberry Pi 3 et + équipés d'écrans tactiles 5 ou 7 pouces (voir section installation) mais peut-être installée sur PC.
 
 ## Fonctionnalités
@@ -9,7 +9,7 @@ L'application a besoin d'un connection internet pour fonctionner car elle utilis
 ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
 La fenêtre principale indique les prochains passages en minutes des bus à un arrêt de bus du réseau Star. elle dispose de 3 boutons, une flèche en bas à droite permettant de passer à l'arrêt suivant,
-une croix au milieu permettant de supprimer cet arrêt de bus des arrêts affichés par cette application et un bouton soleil en bas à gauche permattant de passer à la deuxième fenêtre affichant la météo à Rennes.
+une croix en bas au milieu permettant de supprimer l'arrêt de bus courrament affiché de la liste des arrêts de bus à afficher et un bouton soleil en bas à gauche permattant de passer à la deuxième fenêtre affichant la météo à Rennes.
 
 ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
@@ -22,11 +22,11 @@ Les requêtes envoyées permettent de :
 * Supprimer des arrêts avec des requêtes de la forme  `REMOVE/nom_arret/numero_ligne/direction`
 * Changer la ville dont on affiche la météo `SETCITY/city`
 
-Une application mobile cliente est en cours de developpement implémentant ces requêtes derrière une interface graphique simple pour l'utilisateur lambda
+Une application mobile cliente est en cours de developpement implémentant ces requêtes au travers une interface graphique simple pour l'utilisateur qui sera alors agnostique de ces requêtes. L'utilisateur aura juste à télécharger l'application, connecter son téléphone sur le même réseau wifi que son RaspBerry, à synchroniser le téléphone et le RaspBerry à l'aide d'un bouton sync et de sélectionner les arrêts de bus à ajouter/supprimer à l'aide de l'interface graphique.
 
-On peut tout de même déjà tester l'application à l'aide de petits clients réseau pré-installés sur beaucoup de distributions : `netcat` ou `telnet` 
+On peut tout de même déjà tester l'application à l'aide de petits clients réseau pré-installés sur beaucoup de distributions : `netcat` ou `telnet` cependant les numéros de ligne, noms des arrêts doivent suivre rigoureusement la syntaxe de l'API Star : 
 Exemple si l'application tourne sur une machine dont l'ip privée est `192.168.1.22`
-Alors sur une machine du même réseau on peut envoyer des requêtes à l'application à l'aide de `netcat` :
+Alors sur une machine du même réseau on peut envoyer des requêtes à l'application à l'aide de `netcat` : (on peut aussi tester sur la même machine sur laquelle tourne l'application en remplaçant `192.168.1.22` par `localhost` dans les commandes suivantes)
 
 ```bash
 echo "ADD/Dargent/9/Cleunay" | netcat 192.168.1.22 9999
@@ -39,51 +39,18 @@ echo "REMOVE/Dargent/9/Cleunay" | netcat 192.168.1.22 9999
 ```bash
 echo "SETCITY/Nantes" | netcat 192.168.1.22 9999
 ``` 
-Une application mobile est en cours de developpement permettant d'effectuer ces reqêute au travers d'une interface graphique...
 
-## Requirements
+On peut également modifier le fichier `config.txt` en ajoutant des lignes `ADD/nom_arret/numero_ligne/direction` pour ajouter des arrêts manuellement. Ce fichier est lu au lancement de l'application et les arrêts nouvellement ajoutés durant le temps d'exécution de l'application sont sauvegardé ici lors de la fermeture de l'application. 
 
-* A **Linux Virtual Private Server** (VPS) hosted in the Cloud or a server of your own (Cloud services providers usually give credits to new users)
-* A **domain name** pointing to the **ip address** of this **VPS** : you can register one for free at https://www.freenom.com
-* A **merchant account** at https://stripe.com and the stripe public api_key and private api_key provided by the account
+## Installation
 
-## Installation/Deployment
 
-Deploy a https **payment-ready** shopping website linked to your **domain name** in a few minutes by following these **commands lines** :
 
-* Establish a connection to your **VPS** via **ssh** or other preferred manners and execute the following commands :
+## Commandes
 
-* If there is no user add a **user** :
-```bash
-sudo adduser username
-```
-* go to your **home folder (it's important because the script which will be launch lately depends of this location)** and clone this repository 
+* `f` pour mettre l'applicaiton en fullscreen
+* `CTRL + c` pour fermer l'applciation 
 
-```bash
-cd /home/username
-git clone <thisrepository> webserver
-```
-* Go to the folder just created and run the `install.sh` script to install **Docker and Docker-Compose** if they are not already installed on your VPS
 
-```bash
-cd webserver
-./install.sh
-```
-* Now that Docker and Docker-compose are intalled, you can run the `deployment.sh` script with 4 arguments : the `stripe_public_api_key`, the `stripe_private_ api_key`, the `domain_name` you registered for your website, an `email_address` for the SSL certificate registration.
-
-```bash
-./deployment.sh stipe_pub_api_key stripe_private_api_key domainname email
-```
-Now your website should be **availible** at **yourdomain.com** and you sould see the green locker indicating TLS encyption and HTTPS protocol while browsing it.
-You can also process payment and you should see all the payments from the clients on your **Stripe Dashboard**. The SSL certificates will be automatically renewed everyday.
-
-To check if the three Docker containers are running well: 
-```
-docker-compose ps
-```
-If you encounter any problems during the deployment, check the logs
-```
-docker-compose logs
-```
 
 
