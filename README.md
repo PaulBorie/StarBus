@@ -7,7 +7,7 @@ Elle a été designée pour tourner sur Raspberry Pi 3 et + équipés d'écrans 
 
 L'application a besoin d'un connection internet pour fonctionner car elle utilise les données de l'API officielle de la Star : https://data.explore.star.fr/explore/?sort=title
 
-![alt text](https://github.com/PaulBorie/StarBus/tree/master/gitimages/bus.png?raw=true)
+![alt text](https://github.com/PaulBorie/StarBus/blob/master/gitimages/bus.png?raw=true)
 
 La fenêtre principale indique les prochains passages en minutes des bus à un arrêt de bus du réseau Star. elle dispose de 3 boutons, une flèche en bas à droite permettant de passer à l'arrêt suivant,
 une croix en bas au milieu permettant de supprimer l'arrêt de bus courrament affiché de la liste des arrêts de bus à afficher et un bouton soleil en bas à gauche permattant de passer à la deuxième fenêtre affichant la météo à Rennes.
