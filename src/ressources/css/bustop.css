@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('/ressources/font/Roboto-Medium.ttf');
+}
+
+.label {
+    -fx-font-family: "Roboto";
+
+}

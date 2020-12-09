@@ -1,0 +1,15 @@
+#next{
+    -fx-graphic: url(/ressources/images/play24px.png);
+    /* -fx-graphic: url(/ressources/images/blankNext.png); */
+}
+
+#removebs{
+    -fx-graphic: url(/ressources/images/crossblank24.png);
+    /* -fx-graphic: url(/ressources/images/blankCross.png); */
+}
+
+#weather{
+    -fx-graphic: url(/ressources/images/blackSun4.png);
+    /* -fx-graphic: url(/ressources/images/blankWeather.png); */
+}
+

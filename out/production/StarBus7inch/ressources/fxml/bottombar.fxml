@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: BLACK;" stylesheets="@../css/bottombar.css" type="GridPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Button id="weather" fx:id="weather" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 1em; -fx-focus-color: transparent;">
+         <GridPane.margin>
+            <Insets bottom="15.0" left="15.0" />
+         </GridPane.margin>
+      </Button>
+      <Button id="removebs" fx:id="removebs" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 1em;" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="15.0" />
+         </GridPane.margin>
+      </Button>
+      <Button id="next" fx:id="next" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 1em;" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
+         <GridPane.margin>
+            <Insets bottom="15.0" right="15.0" />
+         </GridPane.margin>
+      </Button>
+   </children>
+</fx:root>
