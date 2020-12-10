@@ -117,11 +117,12 @@ public class BusScene extends Parent {
         for(Node n : busStopsDisplayed){
             BusStopController busStopController = (BusStopController) n;
             if (bs.equals(busStopController.getBusStop())){
-                ((BusStopController) n).dispose();
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
                         busStopSwitcher.getChildren().remove(n);
+                        ((BusStopController) n).dispose();
+
                     }
                 });
             }
