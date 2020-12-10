@@ -9,8 +9,7 @@ L'application a besoin d'un connection internet pour fonctionner car elle utilis
 
 ![alt text](https://github.com/PaulBorie/StarBus/blob/master/gitimages/bus.png?raw=true)
 
-La fenêtre principale indique les **prochains passages** en minutes des bus à un arrêt de bus du réseau Star. elle dispose de 3 boutons, une flèche en bas à droite permettant de passer à l'**arrêt suivant**,
-une croix en bas au milieu permettant de **supprimer** l'arrêt de bus courrament affiché de la liste des arrêts de bus à afficher et un bouton soleil en bas à gauche permattant d'afficher la **météo** à Rennes.
+La fenêtre principale indique les **prochains passages** en minutes des bus à un arrêt de bus du réseau Star. Elle dispose de 3 boutons, une flèche en bas à droite permettant de passer à l'**arrêt suivant**, une croix en bas au milieu permettant de **supprimer** l'arrêt de bus courrament affiché de la liste des arrêts de bus à afficher et un bouton soleil en bas à gauche permattant d'afficher la **météo** à Rennes.
 
 ![alt text](https://github.com/PaulBorie/StarBus/blob/master/gitimages/meteo.png?raw=true)
 
