@@ -15,8 +15,24 @@ une croix en bas au milieu permettant de supprimer l'arrêt de bus courrament af
 ![alt text](https://github.com/PaulBorie/StarBus/blob/master/gitimages/meteo.png?raw=true)
 
 
-## Installation
+# Installation
 
+## Desktop version for Windows, Linux and Mac 
+
+```bash
+git clone 
+cd StarBus/INSTALL/DESKTOP/
+./launch.sh
+``` 
+
+## Rasperry pi version
+
+```bash
+git clone 
+cd StarBus/INSTALL/RASPBERRY/
+./install.sh
+./launch.sh
+``` 
 
 ## Ajouter des arrêts à afficher
 
