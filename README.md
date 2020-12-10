@@ -19,16 +19,20 @@ une croix en bas au milieu permettant de supprimer l'arrêt de bus courrament af
 
 ## Desktop version for Windows, Linux and Mac 
 
+With a Java RunTime Environment > 11
+
 ```bash
-git clone 
+git clone https://github.com/PaulBorie/StarBus.git StarBus
 cd StarBus/INSTALL/DESKTOP/
 ./launch.sh
 ``` 
 
 ## Rasperry pi version
 
+You need first to execute the `install.sh` script which will install the right Version of Java Development Kit with the Java runtime envrironment in it for ARM processor 32 bits (for devices  like Raspberry) As JavaFX is no longer part of the Java JDK (since version 11), running a JavaFX program on Raspberry Pi will not work out-of-the-box. Luckily we can use the LibericaJDK which is provided by BellSoft. They have a version dedicated for the Raspberry Pi which includes JavaFX.
+
 ```bash
-git clone 
+git clone https://github.com/PaulBorie/StarBus.git StarBus 
 cd StarBus/INSTALL/RASPBERRY/
 ./install.sh
 ./launch.sh
