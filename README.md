@@ -60,7 +60,7 @@ echo "REMOVE/Dargent/9/Cleunay" | netcat -q 1 192.168.1.22 9999
 ``` 
 
 ```bash
-echo "SETCITY/Nantes" | netcat 192.168.1.22 -q 1 9999
+echo "SETCITY/Nantes" | netcat -q 1 192.168.1.22 9999
 ``` 
 
 On peut également modifier le fichier `config.txt` en ajoutant des lignes `ADD/nom_arret/numero_ligne/direction` pour ajouter des arrêts manuellement. Ce fichier est lu au **lancement** de l'application et les arrêts nouvellement ajoutés durant le temps d'exécution de l'application sont **sauvegardés** ici lors de la fermeture de l'application. 
