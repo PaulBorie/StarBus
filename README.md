@@ -1,6 +1,6 @@
 # StarBus, application Java FX
 
-StarBus est une application JAVA FX qui lance une interface graphique minimale indiquant les prochains passages de bus en temps réels aux arrêts de bus du réseau Star de Rennes.
+StarBus est une interface graphique JAVA FX indiquant les prochains passages de bus en temps réels aux arrêts de bus du réseau Star de Rennes.
 Elle a été designée pour tourner sur **Raspberry Pi 3** et + équipés d'**écrans tactiles 7 pouces** (voir section installation) mais peut-être installée sur PC.
 
 ## Fonctionnalités
